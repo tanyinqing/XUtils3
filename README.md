@@ -1,5 +1,5 @@
 
-- [文件的父类](src/main/java/org/xutils/sample/BaseActivity.java)
+- [文件的父类](app/src/main/java/org/xutils/sample/BaseActivity.java)
 
 <h1 id="20171228_0">备注细节</h1>
 
