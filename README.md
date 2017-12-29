@@ -1,14 +1,46 @@
 
-<h1 id="20171228_0">目录</h1>
+- [文件的父类](src/main/java/org/xutils/sample/BaseActivity.java)
+
+<h1 id="20171228_0">备注细节</h1>
 
 # [导入软件发生的编译错误](#20171228_1)
 # [文件清单](#20171228_2)
 # [其他](#20171228_3)
 # [FragmentManager事务](#20171228_4)
-
+# [使用Aar文件时要进行配置](#20171228_5)
+# [生成自定义apk包](#20171228_6)
+# [](#20171228_)
+# [](#20171228_)
 xutils这个框架的demo
 
 <h1 id="20171228_">测试</h1>
+[返回](#20171228_0)
+<h1 id="20171228_">测试</h1>
+[返回](#20171228_0)
+<h1 id="20171228_6">生成自定义apk包</h1>
+[返回](#20171228_0)
+<h1 id="20171228_5">使用Aar文件时要进行配置</h1>
+
+- 使用Aar文件时要进行配置
+- compile(name: 'tanyinqingmyaar-release', ext: 'aar')
+
+- build.gradle(Module:app)中修改
+
+```
+buildTypes {
+release {
+minifyEnabled false
+proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+}
+}
+//以下这部分是使用aar新加的
+repositories {
+flatDir {
+dirs 'libs'
+}  
+}//到此为止
+```
+
 [返回](#20171228_0)
 <h1 id="20171228_4">FragmentManager事务</h1>
 
@@ -32,6 +64,7 @@ public void onClick(View view) {
 ```
 [返回](#20171228_0)
 <h1 id="20171228_3">其他</h1>
+
 [返回](#20171228_0)
 <h1 id="20171228_2">文件清单</h1>
 
