@@ -1,5 +1,13 @@
 
-- [文件的父类](app/src/main/java/org/xutils/sample/BaseActivity.java)
+- [BaseActivity](app/src/main/java/org/xutils/sample/BaseActivity.java)
+- [BaseFragment](app/src/main/java/org/xutils/sample/BaseFragment.java)
+- [DbFragment](app/src/main/java/org/xutils/sample/DbFragment.java)
+- [HttpFragment](app/src/main/java/org/xutils/sample/HttpFragment.java)
+- [ImageFragment](app/src/main/java/org/xutils/sample/ImageFragment.java)
+- [MainActivity](app/src/main/java/org/xutils/sample/MainActivity.java)
+- [MyApplication](app/src/main/java/org/xutils/sample/MyApplication.java)
+
++ [实例应用下载apk文件](https://github.com/amapapi/Android_3D_Demo/raw/master/resource/AMapApiV2Demo.apk) (apk)
 
 <h1 id="20171228_0">备注细节</h1>
 
@@ -18,6 +26,29 @@ xutils这个框架的demo
 <h1 id="20171228_">测试</h1>
 [返回](#20171228_0)
 <h1 id="20171228_6">生成自定义apk包</h1>
+
+```
+//配置自定义打包名称
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            def fileName
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                if (variant.buildType.name.equals('release')) {
+                    variant.mergedFlavor.versionName = getVersionName()
+                    //fileName = "XXXX_${variant.mergedFlavor.versionName}_release.apk"
+                    fileName = "WorkTracking20171218.apk"//   让图片放开 改ip 关闭log与内存卡的log
+                    //  fileName = "app-release.apk"// 内测版 让图片放开 改ip 关闭log与内存卡的log
+                } else if (variant.buildType.name.equals('debug')) {
+                    //variant.mergedFlavor.versionName = getVersionName()+"."+releaseTime()
+                    variant.mergedFlavor.versionName = getVersionName()
+                    fileName = "XXXX_${variant.mergedFlavor.versionName}_debug.apk"
+                }
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+        }
+    } //配置自定义打包名称
+```
 [返回](#20171228_0)
 <h1 id="20171228_5">使用Aar文件时要进行配置</h1>
 
@@ -96,11 +127,6 @@ Error:Execution failed for task ':app:dexDebug'.
 finished with non-zero exit value 2
 ```
 [返回](#20171228_0)
-
-
-
-
-
 
 ## xUtils3简介
 * xUtils 包含了orm, http(s), image, view注解, 但依然很轻量级(246K), 并且特性强大, 方便扩展:
