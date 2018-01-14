@@ -7,7 +7,7 @@
 - [MainActivity](app/src/main/java/org/xutils/sample/MainActivity.java)
 - [MyApplication](app/src/main/java/org/xutils/sample/MyApplication.java)
 
-+ [实例应用下载apk文件](https://github.com/tanyinqing/XUtils3/blob/master/resource/xutils.apk) (apk)
++ [实例应用下载apk文件](https://github.com/tanyinqing/XUtils3/raw/master/resource/xutils.apk) (apk)
 
 <h1 id="20171228_0">备注细节</h1>
 
